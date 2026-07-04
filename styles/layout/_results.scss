@@ -1,0 +1,60 @@
+@use '../abstracts/' as a;
+.results {
+    background: var(--green900);
+    padding: a.rem(20px);
+    border-radius: a.rem(15px);
+    @include a.breakpoint ('large') {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: a.rem(25px);
+    h3 {
+        color: var(--white);
+    }
+    p {
+        color: var(--grey200);
+        font-size: a.rem(14px);
+    }
+    .value {
+        color: var(--green400);
+        font-size: a.rem(30px);
+        font-weight: 700;
+        @include a.breakpoint ('large') {
+            font-size: a.rem(50px);
+        }
+    }
+}
+
+.btn-reset {
+    color: var(--green900);
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    background: var(--green400);
+    padding: a.em(15px) a.em(40px);
+    border-radius: a.rem(5px);
+    transition: .3s;
+    &:hover {
+        background: lighten($color: hsl(172, 67%, 45%), $amount: 20)
+    }
+    &:disabled {
+        background: lighten($color: hsl(183, 100%, 15%), $amount: 7);
+    }
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+    @include a.breakpoint ('large') {
+        margin-block-start: auto;
+        font-size: a.rem(24px);
+    }
+
+}
+

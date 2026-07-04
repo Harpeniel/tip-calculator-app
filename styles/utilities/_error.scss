@@ -1,0 +1,5 @@
+@use '../abstracts/' as a;
+
+.error {
+    outline: solid a.rem(3px) red !important;
+}

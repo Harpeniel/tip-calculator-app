@@ -1,0 +1,19 @@
+@use '../abstracts/' as a;
+.container {
+    background: var(--white);
+    padding: a.rem(30px) a.rem(20px);
+    @include a.breakpoint-down ('medium') {
+        border-top-left-radius: a.rem(15px);
+        border-top-right-radius: a.rem(15px);
+    }
+    @include a.breakpoint ('large') {
+        display: flex;
+        column-gap: a.rem(40px);
+        align-self: center;
+        width: 100%;
+        max-width: a.rem(900px);
+        border-radius: a.rem(15px);
+
+    }
+  
+}

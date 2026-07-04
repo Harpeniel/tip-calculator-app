@@ -1,0 +1,17 @@
+@use '../abstracts/' as a;
+
+body {
+    background: var(--grey200);
+    font-family: 'Space Mono', sans-serif;
+    @include a.breakpoint ('large') {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container h3 {
+    color: var(--grey500);
+    margin-bottom: a.rem(10px);
+}

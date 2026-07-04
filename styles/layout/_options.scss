@@ -1,0 +1,63 @@
+@use '../abstracts/' as a;
+
+.options {
+     @include a.breakpoint-down ('medium') {
+        margin-bottom: a.rem(40px);
+    }
+     @include a.breakpoint ('large') {
+        flex: 1;
+    }
+
+}
+.options__tip__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: a.rem(15px);
+    margin-bottom: a.rem(40px);
+    button {
+        color: var(--white);
+        font-size: a.rem(24px);
+        background: var(--green900);
+        font-weight: 700;
+        padding: a.rem(15px) a.rem(40px);
+        border-radius: a.rem(5px);
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+            color: var(--green900);
+            background: var(--green400);
+        }
+    }
+    input {
+        color: var(--grey500);
+        font-size: a.rem(24px);
+        background: var(--grey50);
+        padding: a.rem(15px) a.rem(40px);
+        margin-bottom: 0;
+        border-radius: a.rem(5px);
+        transition: .3s;
+        cursor: pointer;
+        &::placeholder {
+            text-align: center;
+        }
+    }
+}
+
+.options__bill__input-container::before {
+    background: url('../../images/icon-dollar.svg');
+}
+
+.options__person-number__input-container::before {
+    background: url('../../images/icon-person.svg');
+}
+
+.options__person-number__input-container {
+    position: relative;
+    #error-message {
+        position: absolute;
+        top: -45%;
+        right: 0;
+        color: red;
+    }
+}
